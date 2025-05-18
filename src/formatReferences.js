@@ -4,14 +4,13 @@
 // @description 	Formata referências para serem usadas na Wikipédia. Para utilizar, basta apertar CTRL + Q em qualquer site que aparecerá um prompt com a referência já formatada.
 // @version     	1.7
 // @date		04/apr/2012
-// @update		09/mai/2021
+// @update		18/mai/2025
 // @grant          	none
-// @include		*
-// @exclude		*wikipedia.org*
+// @exclu   		*wikipedia.org*
 // ==/UserScript==
 /* jshint laxbreak: true, esversion: 6 */
 
-( function() {
+( function( window ) {
 'use strict';
 
 // Messages set
@@ -78,9 +77,9 @@ function formatReferences() {
 }
 
 // Event set
-document.onkeydown = ( e ) => {
+window.onkeydown = ( e ) => {
 	if ( e.ctrlKey && e.code === 'KeyQ' )
 		formatReferences( e );
 };
 
-} )();
+} )( window );
